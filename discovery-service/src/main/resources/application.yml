@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:8761}
+
+spring:
+  application:
+    name: discovery-service
+  boot:
+    admin:
+      client:
+        # at this moment in time admin-server does not have credentials, so user and password are not important
+        username: admin
+        password: admin
+        url: http://localhost:8083
+
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    root: warn
+    com.melardev: trace

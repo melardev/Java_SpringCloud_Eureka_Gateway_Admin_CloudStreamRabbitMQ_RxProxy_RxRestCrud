@@ -1,0 +1,22 @@
+
+spring:
+  boot:
+    admin:
+      client:
+        # at this moment in time admin-server does not have credentials, so user and password are not important
+        username: admin
+        password: admin
+        url: http://localhost:8083
+        instance:
+          name: cloud-gateway-service
+  application:
+    name: gateway-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
